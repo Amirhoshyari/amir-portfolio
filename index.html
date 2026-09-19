@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amir | Full Stack Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Tahoma,Arial,sans-serif;background:#030817;color:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(140px);z-index:-2;pointer-events:none}
+body:before{width:420px;height:420px;background:#6d28d9;opacity:.22;top:-140px;left:-120px}
+body:after{width:400px;height:400px;background:#0284c7;opacity:.18;right:-130px;bottom:-100px}
+.grid{position:fixed;inset:0;z-index:-3;opacity:.28;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:48px 48px}
+
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1180px,92%);height:62px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;background:#071126b8;border:1px solid #4c3a9b66;border-radius:22px;backdrop-filter:blur(18px);z-index:100}
+.logo{font-size:24px;font-weight:800;color:#24cfff}.logo b{color:#8b5cf6}
+.nav-links{display:flex;gap:34px;list-style:none}.nav-links a{font-size:14px;color:#b6bfd3;transition:.3s}.nav-links a:hover,.nav-links .active{color:#35cfff}
+.theme{border:1px solid #ffffff20;background:#ffffff08;color:#fff;border-radius:20px;padding:7px 13px;cursor:pointer}
+
+.hero{min-height:100vh;width:min(1180px,92%);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:90px}
+.hero-text{order:2}.hero-photo{order:1}
+.badge{display:inline-flex;align-items:center;gap:9px;border:1px solid #38bdf855;background:#38bdf50d;color:#8bdfff;border-radius:30px;padding:9px 16px;font-size:13px;margin-bottom:25px}
+.dot{width:9px;height:9px;background:#22c55e;border-radius:50%;box-shadow:0 0 14px #22c55e}
+h1{font-size:clamp(42px,6vw,76px);line-height:1.1;margin-bottom:16px}
+.gradient{background:linear-gradient(90deg,#22d3ee,#6366f1,#c084fc);-webkit-background-clip:text;color:transparent}
+.typing{font-size:27px;color:#a9b8d8;min-height:38px;margin-bottom:20px}
+.hero p{color:#8e9bb6;line-height:2;font-size:16px;max-width:620px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 23px;border-radius:14px;font-weight:700;transition:.3s;display:inline-flex;align-items:center;gap:8px}
+.primary{background:linear-gradient(90deg,#06b6d4,#7c3aed);box-shadow:0 12px 40px #2563eb44}.secondary{border:1px solid #ffffff2a;background:#ffffff08}.btn:hover{transform:translateY(-4px)}
+.socials{display:flex;gap:10px;margin-top:25px}.socials a{width:43px;height:43px;display:grid;place-items:center;border:1px solid #ffffff1c;border-radius:13px;color:#cbd5e1;background:#ffffff07;transition:.3s}.socials a:hover{border-color:#22d3ee;color:#22d3ee;transform:translateY(-3px)}
+
+.photo-wrap{position:relative;width:min(500px,100%);margin:auto;padding:7px;border-radius:27px;background:linear-gradient(135deg,#00d9ff,#5442ff,#c026d3);box-shadow:0 0 55px #0891b244}
+.photo-wrap:before{content:"";position:absolute;inset:-18px;border:1px solid #22d3ee33;border-radius:34px;z-index:-1}
+.photo{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:22px;border:2px solid #071126}
+.code-note{position:absolute;left:-105px;bottom:30px;color:#48a8ff;font:12px Consolas,monospace;line-height:1.9;opacity:.8}
+.corner{position:absolute;width:28px;height:28px;border-color:#22d3ee;border-style:solid}.c1{top:-12px;left:-12px;border-width:2px 0 0 2px}.c2{bottom:-12px;right:-12px;border-width:0 2px 2px 0}
+
+section{width:min(1180px,92%);margin:100px auto}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:30px}.section-head small{color:#22cfff;letter-spacing:3px}.section-head h2{font-size:39px;margin-top:7px}.section-head p{color:#73809a;font-size:13px}
+.line{width:45px;height:3px;background:#22d3ee;margin-top:12px;border-radius:5px}
+
+.about{display:grid;grid-template-columns:1fr 1.7fr;gap:30px}
+.panel{background:#ffffff06;border:1px solid #ffffff12;border-radius:25px;padding:30px;backdrop-filter:blur(12px)}
+.about h3{font-size:25px;margin-bottom:18px}.about p{color:#8d99b0;line-height:2;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:25px}.stat{padding:20px;border:1px solid #ffffff10;background:#ffffff05;border-radius:17px}.stat strong{display:block;font-size:26px;color:#35d4ff}.stat span{font-size:12px;color:#74819b}
+
+.skills{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}.skill{padding:22px 10px;text-align:center;background:#ffffff06;border:1px solid #ffffff10;border-radius:19px;transition:.3s}.skill:hover{transform:translateY(-7px);border-color:#22d3ee66;background:#22d3ee08}.skill .icon{font-size:34px;margin-bottom:12px}.skill h3{font-size:14px}.skill p{font-size:10px;color:#68758d;margin-top:6px}
+
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.project{overflow:hidden;background:#ffffff06;border:1px solid #ffffff12;border-radius:22px;transition:.35s}.project:hover{transform:translateY(-8px);border-color:#22d3ee55;box-shadow:0 25px 60px #0006}.project-image{height:190px;display:grid;place-items:center;font-size:65px;background:radial-gradient(circle at 30% 30%,#7c3aed66,transparent 50%),linear-gradient(135deg,#0d1a38,#081126)}.project-body{padding:23px}.project h3{margin-bottom:10px}.project p{color:#7f8ca4;line-height:1.8;font-size:13px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{padding:5px 9px;border-radius:8px;font-size:10px;color:#35d4ff;background:#22d3ee0d;border:1px solid #22d3ee22}
+.add-project{border:1px dashed #36517a;background:#ffffff03;display:grid;place-items:center;min-height:320px;color:#71809b;text-align:center}.plus{font-size:45px;color:#22d3ee}
+
+.contact{padding:65px 30px;text-align:center;border:1px solid #ffffff12;border-radius:28px;background:radial-gradient(circle at 50% 0,#2563eb22,transparent 55%),#ffffff05}.contact h2{font-size:38px;margin-bottom:12px}.contact p{color:#7e8aa3;margin-bottom:25px}
+footer{text-align:center;border-top:1px solid #ffffff0d;padding:35px;color:#647087;font-size:13px}footer span{color:#22d3ee}
+
+.reveal{opacity:0;transform:translateY(25px);transition:.8s}.reveal.show{opacity:1;transform:none}
+
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;padding-top:130px}.hero-text{order:1}.hero-photo{order:2}.hero p{margin:auto}.buttons,.socials{justify-content:center}.code-note{display:none}.about{grid-template-columns:1fr}.skills{grid-template-columns:repeat(3,1fr)}.projects{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+@media(max-width:600px){.hero{padding-top:110px}.photo-wrap{max-width:380px}.section-head{display:block}.section-head p{margin-top:10px}.skills{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.section-head h2{font-size:31px}h1{font-size:48px}.typing{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+
+<nav>
+  <div class="logo">&lt;<b>Amir</b> /&gt;</div>
+  <ul class="nav-links">
+    <li><a class="active" href="#home">خانه</a></li>
+    <li><a href="#about">درباره من</a></li>
+    <li><a href="#skills">مهارت‌ها</a></li>
+    <li><a href="#projects">پروژه‌ها</a></li>
+    <li><a href="#contact">تماس</a></li>
+  </ul>
+  <button class="theme" id="theme">☾</button>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-text reveal">
+    <div class="badge"><span class="dot"></span> آماده برای پروژه‌های جدید</div>
+    <h1>سلام، من <span class="gradient">امیر</span> هستم</h1>
+    <div class="typing"><span id="typing"></span></div>
+    <p>من یک برنامه‌نویس علاقه‌مند به تکنولوژی و توسعه نرم‌افزار هستم. تمرکزم روی ساخت وب‌سایت‌های مدرن، ابزارهای کاربردی و پروژه‌های جذابه.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">⌘ مشاهده پروژه‌ها</a>
+      <a class="btn secondary" href="#contact">✉ ارتباط با من</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/" target="_blank">◉</a>
+      <a href="https://t.me/" target="_blank">➤</a>
+      <a href="https://linkedin.com/" target="_blank">in</a>
+      <a href="https://instagram.com/" target="_blank">◎</a>
+    </div>
+  </div>
+
+  <div class="hero-photo reveal">
+    <div class="photo-wrap">
+      <span class="corner c1"></span><span class="corner c2"></span>
+      <img class="photo" src="profile.png" alt="Amir - Developer">
+      <div class="code-note">
+        const developer = {<br>
+        &nbsp;&nbsp;name: "Amir",<br>
+        &nbsp;&nbsp;role: "Full Stack Developer",<br>
+        &nbsp;&nbsp;passion: "Technology",<br>
+        &nbsp;&nbsp;future: "Big Projects"<br>
+        };<br><br>
+        // Keep coding... 🚀
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="reveal">
+  <div class="section-head">
+    <div><small>ABOUT ME</small><h2>درباره من</h2><div class="line"></div></div>
+    <p>کد می‌زنم، یاد می‌گیرم، می‌سازم.</p>
+  </div>
+  <div class="about">
+    <div class="panel">
+      <h3>👨‍💻 Developer Mindset</h3>
+      <p>هدف من ساختن پروژه‌هایی است که هم ظاهر خوبی داشته باشند و هم واقعاً کاربردی باشند.</p>
+      <div class="stats">
+        <div class="stat"><strong>∞</strong><span>ایده برای ساخت</span></div>
+        <div class="stat"><strong>24/7</strong><span>یادگیری</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>ساختن چیزهای خفن با کد 🚀</h3>
+      <p>این قسمت را می‌توانی با معرفی واقعی خودت، تجربه کاری، تحصیلات و هدف‌های آینده‌ات کامل کنی.</p>
+      <p>همچنین می‌توانی اینجا لینک رزومه یا فایل CV خودت را قرار بدهی.</p>
+      <p>ساختار سایت طوری طراحی شده که بعداً به‌راحتی پروژه‌های واقعی‌ات را اضافه کنی.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="section-head">
+    <div><small>MY SKILLS</small><h2>مهارت‌های من</h2><div class="line"></div></div>
+  </div>
+  <div class="skills">
+    <div class="skill"><div class="icon">🐍</div><h3>Python</h3><p>Programming</p></div>
+    <div class="skill"><div class="icon">🌐</div><h3>HTML</h3><p>Web</p></div>
+    <div class="skill"><div class="icon">🎨</div><h3>CSS</h3><p>UI / UX</p></div>
+    <div class="skill"><div class="icon">⚡</div><h3>JavaScript</h3><p>Web Apps</p></div>
+    <div class="skill"><div class="icon">🤖</div><h3>AI</h3><p>Artificial Intelligence</p></div>
+    <div class="skill"><div class="icon">🔧</div><h3>Git</h3><p>Version Control</p></div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <div class="section-head">
+    <div><small>MY WORK</small><h2>پروژه‌های من</h2><div class="line"></div></div>
+    <p>پروژه‌های واقعی خودت را اینجا اضافه کن.</p>
+  </div>
+  <div class="projects">
+    <article class="project">
+      <div class="project-image">🤖</div>
+      <div class="project-body"><h3>AI Assistant</h3><p>توضیح کوتاه درباره پروژه واقعی خودت را اینجا بنویس.</p><div class="tags"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">API</span></div></div>
+    </article>
+    <article class="project">
+      <div class="project-image">🌐</div>
+      <div class="project-body"><h3>Modern Website</h3><p>لینک و توضیحات یکی از سایت‌هایی که ساخته‌ای را اینجا قرار بده.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div></div>
+    </article>
+    <article class="project">
+      <div class="project-image">⚙️</div>
+      <div class="project-body"><h3>Automation Tool</h3><p>یک پروژه Python یا ابزار اتوماسیون خودت را معرفی کن.</p><div class="tags"><span class="tag">Python</span><span class="tag">Automation</span></div></div>
+    </article>
+    <a class="project add-project" href="#contact">
+      <div><div class="plus">＋</div><h3>پروژه جدید</h3><p>برای اضافه کردن پروژه‌های بیشتر...</p></div>
+    </a>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contact">
+    <h2>بیایید چیزی خفن بسازیم 🚀</h2>
+    <p>اگر پروژه یا ایده‌ای داری، می‌توانی از اینجا با من ارتباط بگیری.</p>
+    <a class="btn primary" href="mailto:your@email.com">📩 ارسال ایمیل</a>
+  </div>
+</section>
+
+<footer>ساخته شده با ❤️ و ☕ توسط <span>Amir</span></footer>
+
+<script>
+const texts=["Full Stack Developer 💻","Python Developer 🐍","Web Developer 🌐","Creative Programmer 🚀"];
+let ti=0,ci=0,del=false;
+const typing=document.getElementById("typing");
+function type(){
+  const t=texts[ti];
+  typing.textContent=t.slice(0,ci);
+  if(!del){ci++;if(ci>t.length){del=true;setTimeout(type,1400);return}}
+  else{ci--;if(ci<0){ci=0;del=false;ti=(ti+1)%texts.length}}
+  setTimeout(type,del?45:85);
+}
+type();
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")});
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+
+document.getElementById("theme").addEventListener("click",()=>{
+  document.body.classList.toggle("light");
+});
+</script>
+</body>
+</html>
