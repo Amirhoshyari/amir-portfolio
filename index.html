@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amir | Full Stack Developer</title>
+  <link rel="manifest" href="/amir-portfolio/manifest.json">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -203,6 +204,13 @@ document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
 document.getElementById("theme").addEventListener("click",()=>{
   document.body.classList.toggle("light");
 });
+</script>
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/amir-portfolio/sw.js");
+  });
+}
 </script>
 </body>
 </html>
