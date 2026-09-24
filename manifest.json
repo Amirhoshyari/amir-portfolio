@@ -1,0 +1,21 @@
+{
+  "name": "امیر هوشیاری | برنامه نویس",
+  "short_name": "امیر هوشیاری",
+  "description": "وب‌سایت شخصی امیر هوشیاری، برنامه نویس و توسعه‌دهنده وب",
+  "start_url": "/amir-portfolio/",
+  "scope": "/amir-portfolio/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#00f5ff",
+  "orientation": "portrait",
+  "lang": "fa",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/amir-portfolio/profile.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
